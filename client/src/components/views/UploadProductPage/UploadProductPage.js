@@ -16,7 +16,7 @@ const Continents = [
 function UploadProductPage(props) {
     const [TitleValue, setTitleValue] = useState("");
     const [DescriptionValue, setDescriptionValue] = useState("")
-    const [PriceValue, setPriceValue] = useState()
+    const [PriceValue, setPriceValue] = useState(0)
     const [ContinentValue, setContinentValue] = useState(1)
     const [Images, setImages] = useState([])
     const onTitleChange = (evt) => {
@@ -32,7 +32,6 @@ function UploadProductPage(props) {
         setContinentValue(evt.currentTarget.value);
     }
     const updateImages = (newImages) => {
-        console.log(newImages)
         setImages(newImages)
     }
     const onSubmit = (evt) => {
@@ -88,7 +87,7 @@ function UploadProductPage(props) {
                     onChange={onPriceChange}
                     value={PriceValue}
                     type="number"
-                />          
+                />         
                 <select onChange={onContinentSelectChange}>
                     {Continents.map(item => (
                     <option key={item.key} value={item.key}>
